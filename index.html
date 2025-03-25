@@ -11,17 +11,73 @@
             padding: 0;
             background-color: #fdfde8;
         }
-        .header {
-            background: #444;
-            color: white;
-            text-align: center;
-            padding: 15px;
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #626258;
+            padding: 10px;
+            color: #fdfde8;
+        }
+
+        .navbar .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin: 0 15px;
+            background-color: #626258;
+        }
+
+        .nav-links a {
+            color: #fdfde8;
+            text-decoration: none;
+            font-size: 16px;
+            background-color: #626258;
+        }
+
+        .menu-toggle {
+            display: none;
             font-size: 24px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: #333;
+                text-align: center;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links li {
+                padding: 10px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
         }
         .container {
             max-width: 1000px;
             width: 90%;
-            margin: auto;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 1%;
             background: #f5f5dc;
             padding: 20px;
             border-radius: 10px;
@@ -95,16 +151,17 @@
             transform: scale(1.05);
         }
         .icon {
-            width: 32px;
-            height: 32px;
+            width: 24px;
+            height: 24px;
             margin-right: 10px;
         }
         .footer {
-            background: rgb(215, 215, 141);
-            padding: 20px;
+            background: #626258;
+            padding: 10px;
             text-align: center;
             width: 100%;
             margin-top: 20px;
+            color: white;
         }
         @media (max-width: 600px) {
             .contact-container {
@@ -130,7 +187,17 @@
     </style>
 </head>
 <body>
-    <header class="header">Welcome to My Portfolio</header>
+    
+    <nav class="navbar">
+        <div class="logo">PERSONAL INFORMATION</div>
+        <ul class="nav-links">
+            <li><a href="#">About</a></li>
+            <li><a href="picture.html">Project</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="menu-toggle">☰</div>
+    </nav>
+
     <div class="container">
         <img src="profile.jpg" alt="Foto Profil" class="profile-img">
         <h1>Afifah Luthfi Fathonah</h1><hr>
@@ -169,6 +236,14 @@
             <div class="info" id="info3">
                 Leave Application Project is an application designed to facilitate employees in processing leave applications and assist the head of the work unit in approving / rejecting leave applications. this project aims to make it easier for employees and heads of work units to apply for and confirm leave.
             </div>
+            <li>
+                <div class="clickable" onclick="toggleInfo('info4')">
+                    <strong>Web Project</strong> - Managing Student and Lecturer Data
+                </div>
+            </li>
+            <div class="info" id="info4">
+                Developed a web-based system for managing student and lecturer data using a PHP framework. Included features for handling class schedules, enabling efficient organization and monitoring of academic activities. Built as part of a Web Programming assignment, focusing on CRUD operations, database management, and user-friendly interface design.
+            </div>
         </ul>
 
         <h2>Skill</h2><hr>
@@ -194,6 +269,14 @@
             </div>
         </div>
     </footer>
+    <script>
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navLinks = document.querySelector(".nav-links");
+
+        menuToggle.addEventListener("click", () => {
+            navLinks.classList.toggle("show");
+        });
+    </script>
     <script>
         function toggleInfo(infoId) {
             var info = document.getElementById(infoId);
