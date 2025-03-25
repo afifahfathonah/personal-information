@@ -7,64 +7,202 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
-            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            background-color: #fdfde8;
+        }
+        .header {
+            background: #444;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 24px;
         }
         .container {
-            max-width: 800px;
+            max-width: 1000px;
+            width: 90%;
             margin: auto;
-            background: white;
+            background: #f5f5dc;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            line-height: 1.8;
+        }
+
+        .container p {
+        text-align: justify;
+        }
+
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 20px auto;
         }
         h1, h2 {
-            color: #333;
+            color: #444;
+            text-align: center;
         }
         ul {
             list-style-type: none;
             padding: 0;
         }
         li {
-            background: #ddd;
+            background: #fdfde8;
             margin: 5px 0;
             padding: 10px;
             border-radius: 5px;
         }
-        a {
-            color: #0073e6;
-            text-decoration: none;
+        .clickable {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #fdfde8;
+            border-radius: 5px;
+            transition: transform 0.2s ease-in-out;
         }
+        .clickable:hover {
+            transform: scale(1.01);
+        }
+        .info {
+            display: none;
+            padding: 10px;
+            background-color: #d8d8b3;
+            border: 1px solid #bbb;
+            margin-top: 5px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .contact-box {
+            display: flex;
+            align-items: center;
+            
+            padding: 10px 20px;
+            border-radius: 10px;
+            transition: transform 0.2s;
+        }
+        .contact-box:hover {
+            transform: scale(1.05);
+        }
+        .icon {
+            width: 32px;
+            height: 32px;
+            margin-right: 10px;
+        }
+        .footer {
+            background: rgb(215, 215, 141);
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            margin-top: 20px;
+        }
+        @media (max-width: 600px) {
+            .contact-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        @media (max-width: 400px) {
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+    .contact-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .icon {
+        margin-bottom: 5px;
+    }
+}
+
     </style>
 </head>
 <body>
+    <header class="header">Welcome to My Portfolio</header>
     <div class="container">
-        <h1>Nama Anda</h1>
-        <p><strong>Alamat:</strong> [Alamat Anda]</p>
-        <p><strong>Email:</strong> [Email Anda]</p>
-        <p><strong>Deskripsi Singkat:</strong> [Tulis sedikit tentang diri Anda]</p>
-        <p><strong>LinkedIn:</strong> <a href="#">[Link Profil LinkedIn]</a></p>
-        <p><strong>GitHub:</strong> <a href="#">[Link Profil GitHub]</a></p>
+        <img src="profile.jpg" alt="Foto Profil" class="profile-img">
+        <h1>Afifah Luthfi Fathonah</h1><hr>
+        <p>Hi there! I am a student at Politeknik Negeri Batam, class of 2024, majoring in Informatics Engineering, specializing in Software Engineering Technology.
+        </p>
+        <p>
+            Currently, I am focusing on various programming technologies, particularly PHP and Python frameworks. In addition, I am also learning MySQL database management and UI/UX design to enhance user experience in application development.
+        </p>
+        <p>
+            I am passionate about programming and always eager to learn new things. With determination and hard work, I believe I can become a great programmer in the future!
+        </p>
 
-        <h2>Riwayat Pendidikan</h2>
+        <h2>Educational background</h2><hr>
         <ul>
-            <li><strong>[Nama Universitas]</strong> - [Jurusan] (Tahun Masuk - Tahun Kelulusan)</li>
-            <li><strong>[Nama SMU]</strong> - [Jurusan] (Tahun Masuk - Tahun Kelulusan)</li>
+            <li>
+                <div class="clickable" onclick="toggleInfo('info1')">
+                    <strong>Politeknik Negeri Batam</strong> - Software engineering Technology (2024 - Now)
+                </div>
+                <div class="info" id="info1">I am currently pursuing my education at Politeknik Negeri Batam, majoring in Informatics Engineering, with a specialization in Software Engineering Technology. Currently, I am in my second semester, actively learning and honing my skills in software development.</div>
+            </li>
+            <li>
+                <div class="clickable" onclick="toggleInfo('info2')">
+                    <strong>SMAIT Imam Syafi'i</strong> - (2021 - 2024)
+                </div>
+                <div class="info" id="info2">I completed my high school education in science major, where I developed a strong foundation in analytical thinking and problem-solving. My background in science has helped me build a logical approach to tackling complex challenges, which I now apply in the field of Software Engineering Technology.</div>
+            </li>
         </ul>
-        
-        <h2>Proyek</h2>
+
+        <h2>Project</h2><hr>
         <ul>
-            <li><strong>[Nama Proyek 1]</strong> - Deskripsi singkat proyek.</li>
-            <li><strong>[Nama Proyek 2]</strong> - Deskripsi singkat proyek.</li>
+            <li>
+                <div class="clickable" onclick="toggleInfo('info3')">
+                    <strong>CutiAja</strong> - Leave Application Project
+                </div>
+            </li>
+            <div class="info" id="info3">
+                Leave Application Project is an application designed to facilitate employees in processing leave applications and assist the head of the work unit in approving / rejecting leave applications. this project aims to make it easier for employees and heads of work units to apply for and confirm leave.
+            </div>
         </ul>
-        
-        <h2>Skill</h2>
+
+        <h2>Skill</h2><hr>
         <ul>
-            <li><strong>Programming Languages:</strong> HTML, CSS, JavaScript</li>
-            <li><strong>Tools:</strong> Git, VS Code</li>
-            <li><strong>Soft Skills:</strong> Komunikasi, Kepemimpinan</li>
+            <li><strong>Programming Languages:</strong> CSS, PHP, Python</li>
+            <li><strong>Tools:</strong> Git, VS Code, phpMyAdmin</li>
+            <li><strong>Soft Skills:</strong> Teamwork, Critical thinking, Active listening</li>
         </ul>
     </div>
+    <footer class="footer">
+        <div class="contact-container">
+            <div class="contact-box">
+                <img src="email-icon.png" alt="Email" class="icon">
+                <span>affifahfathonah@gmail.com</span>
+            </div>
+            <div class="contact-box">
+                <img src="linkedin-icon.png" alt="LinkedIn" class="icon">
+                <span><a href="#">afifahfathonah</a></span>
+            </div>
+            <div class="contact-box">
+                <img src="github-icon.png" alt="GitHub" class="icon">
+                <span><a href="https://github.com/afifahfathonah">afifahfathonah</a></span>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function toggleInfo(infoId) {
+            var info = document.getElementById(infoId);
+            if (info.style.display === "none" || info.style.display === "") {
+                info.style.display = "block";
+            } else {
+                info.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
