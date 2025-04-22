@@ -16,7 +16,7 @@
             justify-content: space-between;
             align-items: center;
             background: #626258;
-            padding: 10px;
+            padding: 5px;
             color: #fdfde8;
         }
 
@@ -49,6 +49,14 @@
         }
 
         @media (max-width: 768px) {
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background: #626258;
+                padding: 10px;
+                color: #fdfde8;
+            }
             .nav-links {
                 display: none;
                 flex-direction: column;
@@ -56,7 +64,7 @@
                 top: 60px;
                 left: 0;
                 width: 100%;
-                background: #333;
+                background: #fdfde8;
                 text-align: center;
             }
 
@@ -66,6 +74,10 @@
 
             .nav-links li {
                 padding: 10px 0;
+                margin-top: 10px;
+                margin-left: 80px;
+                margin-right: 80px;
+                margin-bottom: 10px;
             }
 
             .menu-toggle {
@@ -192,7 +204,7 @@
         <div class="logo">PERSONAL INFORMATION</div>
         <ul class="nav-links">
             <li><a href="#">About</a></li>
-            <li><a href="picture.html">Project</a></li>
+            <li><a href="project.html">Project</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
         <div class="menu-toggle">☰</div>
@@ -244,28 +256,40 @@
             <div class="info" id="info4">
                 Developed a web-based system for managing student and lecturer data using a PHP framework. Included features for handling class schedules, enabling efficient organization and monitoring of academic activities. Built as part of a Web Programming assignment, focusing on CRUD operations, database management, and user-friendly interface design.
             </div>
+            <li>
+                <div class="clickable" onclick="toggleInfo('info5')">
+                    <strong>SIKERMA SMK PK</strong> - Managing Collaborations Data
+                </div>
+            </li>
+            <div class="info" id="info5">
+                Sikerma SMK PK is a collaboration management system developed to support Vocational High Schools (SMK) in facing the VUCA era (Volatility, Uncertainty, Complexity, Ambiguity). This application is designed to record, manage, and integrate collaborations between SMKs and industry partners.
+            </div>
         </ul>
 
         <h2>Skill</h2><hr>
         <ul>
-            <li><strong>Programming Languages:</strong> CSS, PHP, Python</li>
+            <li><strong>Programming Languages:</strong> CSS, PHP, Python, JavaScript</li>
             <li><strong>Tools:</strong> Git, VS Code, phpMyAdmin</li>
-            <li><strong>Soft Skills:</strong> Teamwork, Critical thinking, Active listening</li>
+            <li><strong>Soft Skills:</strong> Teamwork, Critical thinking, Time Management</li>
         </ul>
     </div>
     <footer class="footer">
         <div class="contact-container">
             <div class="contact-box">
                 <img src="email-icon.png" alt="Email" class="icon">
-                <span>affifahfathonah@gmail.com</span>
+                <span>afifahfathonah5@gmail.com</span>
             </div>
             <div class="contact-box">
                 <img src="linkedin-icon.png" alt="LinkedIn" class="icon">
-                <span><a href="#">afifahfathonah</a></span>
+                <span>afifahfathonah</span>
             </div>
             <div class="contact-box">
                 <img src="github-icon.png" alt="GitHub" class="icon">
                 <span><a href="https://github.com/afifahfathonah">afifahfathonah</a></span>
+            </div>
+            <div class="contact-box">
+                <img src="instagram.png" alt="Instagram" class="icon">
+                <span>afiifahlfth</span>
             </div>
         </div>
     </footer>
